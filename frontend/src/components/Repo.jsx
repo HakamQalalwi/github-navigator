@@ -12,12 +12,12 @@ const Repo = () => {
       </span>
       <div className="flex gap-2 items-center flex-wrap">
         <a
-          href={"https://github.com/burakorkmez/mern-chat-app"}
+          href={"https://github.com/HakamQalalwi/Live-Chat-App"}
           target="_blank"
           rel="noreferrer"
           className="flex items-center gap-2 text-lg font-semibold"
         >
-          mern-chat-app
+          Live-Chat-App
         </a>
         <span
           className="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5
