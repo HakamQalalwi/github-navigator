@@ -13,10 +13,10 @@ const ExplorePage = () => {
     setRepos([]);
     try {
       const res = await fetch(
-        `https://api.github.com/search/repositories?q=language:${language}&sort=stars&order=desc&per_page=10`
+        "http://localhost:5000/api/explore/repos/" + language
       );
-      const data = await res.json();
-      setRepos(data.items);
+      const { repos } = await res.json();
+      setRepos(repos);
       setSelectedLanguage(language);
     } catch (error) {
       toast.error(error.message);
