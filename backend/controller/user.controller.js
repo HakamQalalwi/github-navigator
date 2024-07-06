@@ -1,3 +1,5 @@
+import User from "../models/user.model.js";
+
 export const getUserProfileAndRepos = async (req, res) => {
   const { username } = req.params;
   try {
@@ -6,7 +8,9 @@ export const getUserProfileAndRepos = async (req, res) => {
         authorization: `token ${process.env.GITHUB_API_KEY}`,
       },
     });
+
     const userProfile = await userRes.json();
+
     const repoRes = await fetch(userProfile.repos_url, {
       headers: {
         authorization: `token ${process.env.GITHUB_API_KEY}`,
