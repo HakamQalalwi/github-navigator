@@ -14,6 +14,7 @@ import connectMongoDB from "./db/connectMongoDB.js";
 dotenv.config();
 
 const app = express();
+const PORT = process.env.PORT || 5000;
 
 app.use(
   session({ secret: "keyboard cat", resave: false, saveUninitialized: false })
@@ -32,7 +33,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/explore", exploreRoutes);
 
-app.listen(5000, () => {
-  console.log("Server started on http://localhost:5000/");
+app.listen(PORT, () => {
+  console.log(`Server started on http://localhost:${PORT}/`);
   connectMongoDB();
 });
